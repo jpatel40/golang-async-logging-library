@@ -25,6 +25,8 @@ type Alog struct {
 // New creates a new Alog object that writes to the provided io.Writer.
 // If nil is provided the output will be directed to os.Stdout.
 func New(w io.Writer) *Alog {
+	msgCh := 0
+	errorCh := nil
 	if w == nil {
 		w = os.Stdout
 	}
